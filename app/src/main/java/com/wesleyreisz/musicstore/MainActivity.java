@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.wesleyreisz.musicstore.account.AccountFragment;
+import com.wesleyreisz.musicstore.friend.FriendFragment;
 import com.wesleyreisz.musicstore.home.HomeFragment;
 import com.wesleyreisz.musicstore.itune.ItuneFragment;
 import com.wesleyreisz.musicstore.mysong.MySongFragment;
@@ -47,6 +48,10 @@ public class MainActivity extends AppCompatActivity {
                     .beginTransaction()
                     .replace(R.id.fragmentMain, fragment2load)
                     .replace(R.id.fragmentContent, new HomeFragment())
+                    .replace(R.id.fragmentContent, new AccountFragment())
+                    .replace(R.id.fragmentContent, new MySongFragment())
+                    .replace(R.id.fragmentContent, new FriendFragment())
+                    .replace(R.id.fragmentContent, new ItuneFragment())
                     .commit();
 
         }else {
@@ -75,8 +80,21 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
-        }else   if (id == R.id.action_home) {
+        }if (id == R.id.action_home) {
             loadFragment(new NavigationFragment());
+        }
+        if (id == R.id.action_account) {
+            loadFragment(new AccountFragment());
+        }
+        if (id == R.id.action_friends){
+            loadFragment(new FriendFragment());
+        }
+        if (id == R.id.action_songs) {
+            loadFragment(new MySongFragment());
+
+        }
+        else if (id == R.id.action_top) {
+            loadFragment(new ItuneFragment());
         }
 
         return super.onOptionsItemSelected(item);

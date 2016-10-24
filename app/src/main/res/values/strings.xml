@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">"Music Store "</string>
     <string name="action_home">Home</string>
+    <string name="action_songs">Songs</string>
+    <string name="action_account">Account</string>
+    <string name="action_top">Top 10</string>
+    <string name="action_friends">Friends</string>
     <string name="action_settings">Settings</string>
 
     <!-- TODO: Remove or change this placeholder text -->
